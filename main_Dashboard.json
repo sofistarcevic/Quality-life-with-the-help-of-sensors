@@ -124,7 +124,7 @@
             {
               "jsonPath": "$.Temperatura[*]",
               "language": "jsonpath",
-              "name": "Temperatura",
+              "name": "Temperature",
               "type": "number"
             }
           ],
@@ -505,7 +505,7 @@
             {
               "jsonPath": "$.Humedad[*]",
               "language": "jsonpath",
-              "name": "humedad",
+              "name": "Humidity",
               "type": "number"
             }
           ],
@@ -880,7 +880,7 @@
             {
               "jsonPath": "$.Ruido[*]",
               "language": "jsonpath",
-              "name": "Sonido",
+              "name": "Sound",
               "type": "number"
             }
           ],
@@ -1155,6 +1155,366 @@
       "fieldConfig": {
         "defaults": {
           "color": {
+            "fixedColor": "yellow",
+            "mode": "thresholds"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-yellow",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 3500
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 11,
+        "x": 0,
+        "y": 21
+      },
+      "id": 15,
+      "interval": "5s",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "cacheDurationSeconds": 0,
+          "datasource": {
+            "type": "marcusolsson-json-datasource",
+            "uid": "adkphjy2rbklcf"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.Metrica_Luz[*]",
+              "name": "Time",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.Luz[*]",
+              "language": "jsonpath",
+              "name": "Brightness",
+              "type": "number"
+            }
+          ],
+          "method": "GET",
+          "queryParams": "",
+          "refId": "A",
+          "urlPath": ""
+        }
+      ],
+      "timeFrom": "30s",
+      "timeShift": "30s",
+      "title": "Brightness Graphic",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "marcusolsson-json-datasource",
+        "uid": "adkphjy2rbklcf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-yellow",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 3500
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 11,
+        "y": 21
+      },
+      "id": 16,
+      "interval": "5s",
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "cacheDurationSeconds": 0,
+          "datasource": {
+            "type": "marcusolsson-json-datasource",
+            "uid": "adkphjy2rbklcf"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.Metrica_Luz[*]",
+              "name": "Time",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.Luz[*]",
+              "language": "jsonpath",
+              "name": "Brightness",
+              "type": "number"
+            }
+          ],
+          "method": "GET",
+          "queryParams": "",
+          "refId": "A",
+          "urlPath": ""
+        }
+      ],
+      "timeFrom": "30s",
+      "timeShift": "30s",
+      "title": "Maximum Brightness",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "marcusolsson-json-datasource",
+        "uid": "adkphjy2rbklcf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-yellow",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 3500
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 15,
+        "y": 21
+      },
+      "id": 17,
+      "interval": "5s",
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "cacheDurationSeconds": 0,
+          "datasource": {
+            "type": "marcusolsson-json-datasource",
+            "uid": "adkphjy2rbklcf"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.Metrica_Luz[*]",
+              "name": "Time",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.Luz[*]",
+              "language": "jsonpath",
+              "name": "Brightness",
+              "type": "number"
+            }
+          ],
+          "method": "GET",
+          "queryParams": "",
+          "refId": "A",
+          "urlPath": ""
+        }
+      ],
+      "timeFrom": "30s",
+      "timeShift": "30s",
+      "title": "Brightness Average",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "marcusolsson-json-datasource",
+        "uid": "adkphjy2rbklcf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-yellow",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 3500
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 19,
+        "y": 21
+      },
+      "id": 18,
+      "interval": "5s",
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "cacheDurationSeconds": 0,
+          "datasource": {
+            "type": "marcusolsson-json-datasource",
+            "uid": "adkphjy2rbklcf"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.Metrica_Luz[*]",
+              "name": "Time",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.Luz[*]",
+              "language": "jsonpath",
+              "name": "Brightness",
+              "type": "number"
+            }
+          ],
+          "method": "GET",
+          "queryParams": "",
+          "refId": "A",
+          "urlPath": ""
+        }
+      ],
+      "timeFrom": "30s",
+      "timeShift": "30s",
+      "title": "Latest Measure",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "marcusolsson-json-datasource",
+        "uid": "adkphjy2rbklcf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
             "fixedColor": "dark-blue",
             "mode": "continuous-BlYlRd"
           },
@@ -1196,7 +1556,7 @@
         "h": 8,
         "w": 11,
         "x": 0,
-        "y": 21
+        "y": 29
       },
       "id": 10,
       "options": {
@@ -1236,13 +1596,13 @@
             {
               "jsonPath": "$.Humedad[*]",
               "language": "jsonpath",
-              "name": "Humedad %",
+              "name": "Humidity %",
               "type": "number"
             },
             {
               "jsonPath": "$.Temperatura[*]",
               "language": "jsonpath",
-              "name": "Temperatura Cº",
+              "name": "Temperature Cº",
               "type": "number"
             }
           ],
@@ -1269,6 +1629,7 @@
             "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
+            "axisLabel": "",
             "axisPlacement": "auto",
             "fillOpacity": 80,
             "gradientMode": "none",
@@ -1305,7 +1666,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Humedad/Temperatura"
+              "options": "Humidity/Temperature"
             },
             "properties": [
               {
@@ -1317,7 +1678,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Temperatura"
+              "options": "Temperature"
             },
             "properties": [
               {
@@ -1332,7 +1693,7 @@
         "h": 8,
         "w": 12,
         "x": 11,
-        "y": 21
+        "y": 29
       },
       "id": 11,
       "options": {
@@ -1353,7 +1714,7 @@
           "mode": "single",
           "sort": "none"
         },
-        "xField": "Temperatura",
+        "xField": "Temperature",
         "xTickLabelRotation": 0,
         "xTickLabelSpacing": 100
       },
@@ -1367,13 +1728,13 @@
           "fields": [
             {
               "jsonPath": "$.Humedad[*]",
-              "name": "Humedad/Temperatura",
+              "name": "Humidity/Temperature",
               "type": "number"
             },
             {
               "jsonPath": "$.Temperatura[*]",
               "language": "jsonpath",
-              "name": "Temperatura",
+              "name": "Temperature",
               "type": "number"
             }
           ],
@@ -1383,24 +1744,24 @@
           "urlPath": ""
         }
       ],
-      "title": "Humidity/temperature",
+      "title": "Humidity/temperature Graphic",
       "type": "barchart"
     }
   ],
-  "refresh": "",
+  "refresh": "5s",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "2024-05-04T20:34:58.421Z",
-    "to": "2024-05-04T21:17:38.304Z"
+    "from": "2024-05-04T23:00:59.516Z",
+    "to": "2024-05-04T23:15:37.649Z"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Proyecto",
   "uid": "edkq7190kw0sgb",
-  "version": 49,
+  "version": 63,
   "weekStart": ""
 }
